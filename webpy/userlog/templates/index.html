@@ -1,0 +1,6 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="container">
+  <h1>Welcome {{request.user}}</h1>
+  <a href="{% url 'logout' %}">Logout</a>
+</div>
+{% endblock content %} {% block title %}Django{% endblock title %}
