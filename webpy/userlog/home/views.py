@@ -20,11 +20,13 @@ def loginUser(request):
             # authenticate the user
             login(request, user)
             return redirect('/')
+
     if request.user is not None:
         return redirect('/')
+
     return render(request, 'login.html')
 
 
-def logoutUser(request):
-    logout(request)
-    return render(request, 'login.html')
+# def logoutUser(request):
+#     logout(request)
+#     return redirect('/login')

@@ -4,5 +4,6 @@ from user import views
 
 urlpatterns = [
     path('', views.index, name="userhome"),
-    path('about', views.about, name="userabout"),
+    path('allusers', views.allusers, name="allusers"),
+    path('edit/<id>', views.editUser, name="editUser"),
 ]
