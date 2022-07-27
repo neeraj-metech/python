@@ -9,6 +9,7 @@
                 <th scope="col">User Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Body</th>
+                <th scope="col">View</th>
               </tr>
             </thead>
             <tbody>
@@ -18,6 +19,7 @@
                         <td>{{post.userId}}</td>
                         <td>{{post.title}}</td>
                         <td>{{post.body}}</td>
+                        <td><a href="{% url 'view_post' post.id %}" class="btn btn-default">View</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

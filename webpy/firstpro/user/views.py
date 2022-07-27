@@ -41,13 +41,16 @@ def editUser(request, id):
     return render(request, 'users/useredit.html', context)
 
 
-def allposts(request, userId=0):
+def allposts(request, userId='0'):
     if userId != '0':
         params = {
             "id": userId
         }
-        post = requests.post(
-            'https://jsonplaceholder.typicode.com/posts/', params).json()
+        # post = requests.post(
+        #     'https://jsonplaceholder.typicode.com/posts/', params).json()
+        post = requests.get(
+            'https://jsonplaceholder.typicode.com/posts/'+userId).json()
+        # print('https://jsonplaceholder.typicode.com/posts/'+userId)
         context = {
             'post': post
         }
